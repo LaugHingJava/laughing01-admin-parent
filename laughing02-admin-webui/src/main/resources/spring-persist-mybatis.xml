@@ -33,7 +33,9 @@
         <!-- 使用basePackage 属性指定Mapper 接口所在包-->
         <property name="basePackage" value="com.laughing.crowd.mapper"/>
     </bean>
-
-
+<!--导入-->
+    <import resource="spring-persist-tx.xml"/>
+    <!--扫描包-->
+    <context:component-scan base-package="com.laughing.crowd.*" />
 
 </beans>

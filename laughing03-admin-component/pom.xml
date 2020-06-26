@@ -119,6 +119,17 @@
             <artifactId>jcl-over-slf4j</artifactId>
             <version>1.7.25</version>
         </dependency>
+
+        <!-- AOP 所需依赖-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
+        <!-- AOP 所需依赖-->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

@@ -1,6 +1,7 @@
 
 import com.laughing.crowd.entity.Admin;
 import com.laughing.crowd.mapper.AdminMapper;
+import com.laughing.crowd.service.AdminService;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,11 +21,14 @@ import java.sql.SQLException;
 @ContextConfiguration(locations = {"classpath:spring-persist-mybatis.xml"})
 public class Test {
 
+
     private Logger logger = LoggerFactory.getLogger(Test.class);
     @Autowired
     private DataSource dataSource;
     @Resource
     private AdminMapper adminMapper;
+    @Resource
+    private AdminService adminService;
     @org.junit.Test
     public void insert(){
         Admin test = new Admin(null,"test","123456","testname","test@qq.com",null);
@@ -35,6 +39,14 @@ public class Test {
     public void t() throws SQLException {
         Connection connection  =dataSource.getConnection();
         System.out.println(connection);
+    }
+
+    @org.junit.Test
+    public void testSava()   {
+        Admin admin = new Admin(null,"ssss","123456","testname","test@qq.com",null);
+
+        adminService.saveAdmin(admin);
+
     }
 
 }
