@@ -11,5 +11,14 @@
 
     <artifactId>laughing05-common-util</artifactId>
 
+    <!-- 引入Servlet 容器中相关依赖-->
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
+
+    </dependencies>
+
 
 </project>
