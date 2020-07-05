@@ -102,7 +102,7 @@ public class AdminServiceImpl implements AdminService {
         return adminMapper.selectByPrimaryKey(id);
     }
 
-    /**根据id修改admin
+    /**根据id修改admin信息
      * @param admin
      */
     public void updateAdminById(Admin admin) {
