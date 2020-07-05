@@ -77,9 +77,9 @@ public class AdminServiceImpl implements AdminService {
      * @return PageInfo
      */
     public PageInfo<Admin> getAdminPage(String keyword, Integer pageNum, Integer pageSize) {
-
-        List<Admin> adminList = adminMapper.selectAdminListByKeyword(keyword);
         PageHelper.startPage(pageNum,pageSize);
+        List<Admin> adminList = adminMapper.selectAdminListByKeyword(keyword);
+
         return new PageInfo<Admin>(adminList);
     }
 

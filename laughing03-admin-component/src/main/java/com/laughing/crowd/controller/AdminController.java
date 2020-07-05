@@ -3,7 +3,9 @@ package com.laughing.crowd.controller;
 import com.github.pagehelper.PageInfo;
 import com.laughing.crowd.constant.CrowdConstant;
 import com.laughing.crowd.entity.Admin;
+import com.laughing.crowd.entity.Role;
 import com.laughing.crowd.service.AdminService;
+import com.laughing.crowd.service.RoleService;
 import com.laughing.crowd.util.CrowdUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,9 +13,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -131,4 +135,5 @@ public class AdminController {
         adminService.updateAdminById(admin);
         return "redirect:/admin/page.html?keyword="+keyword+"&pageNum="+pageNum;
     }
+
 }

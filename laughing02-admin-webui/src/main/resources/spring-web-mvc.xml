@@ -43,7 +43,7 @@
     <mvc:view-controller path="/admin/to/login.html" view-name="admin-login"></mvc:view-controller>
     <mvc:view-controller path="/admin/to/main.html" view-name="main"></mvc:view-controller>
     <mvc:view-controller path="/admin/to/admin-add.html" view-name="admin-add"></mvc:view-controller>
-
+    <mvc:view-controller path="/role/to/rolePage.html" view-name="role-page"></mvc:view-controller>
 
 
 

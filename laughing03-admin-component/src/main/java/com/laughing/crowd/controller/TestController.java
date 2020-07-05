@@ -39,10 +39,8 @@ public class TestController {
         ResultEntity resultEntity = new ResultEntity("fail","异常",null);
         return "test";
     }
-    @ResponseBody
-    @RequestMapping("/test/req")
-    public Object reqTest(HttpServletRequest request){
-        System.out.println(CrowdUtil.judgeRequestType(request));
-        return "测试req";
-    }
+
+
+
+
 }

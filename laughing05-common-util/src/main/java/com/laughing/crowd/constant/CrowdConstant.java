@@ -11,8 +11,15 @@ public class CrowdConstant {
     public static final String Save_Anomaly_Exception = "增加发生异常";
     public static final String Modify_Anomaly_Exception = "修改发生异常";
 
+    public static final String ADDROLE_SUCCESS_MESSAGE = "增加成功"; //增加角色成功
+    public static final String ADDROLE_FAILED_MESSAGE = "增加失败"; //增加角色失败
+    public static final String MODIFY_SUCCESS_MESSAGE = "修改角色成功"; //修改角色成功
+    public static final String MODIFY_FAILED_MESSAGE = "修改角色失败"; //修改角色失败
+    public static final String DEL_SUCCESS_MESSAGE = "删除角色成功"; //修改角色成功
+    public static final String DEL_FAILED_MESSAGE = "删除角色失败"; //修改角色失败
 
-
+    public static final String RESULT_CODE_SUCCESS = "SUCCESS"; //返回成功的状态码
+    public static final String RESULT_CODE_FAILED = "FAILED"; //返回失败的状态码
     public static final String ATTR_NAME_ADMIN = "admin";
     public static final String ATTR_NAME_LOGIN_ADMIN = "loginAdmin";
     public static final String ATTR_NAME_EXCEPTION = "exception";
