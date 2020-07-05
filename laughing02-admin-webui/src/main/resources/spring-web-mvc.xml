@@ -39,6 +39,23 @@
             </props>
         </property>
     </bean>
+    <!--相当于定义了一个接口/admin/to/login.html 然后跳转admin-login-->
+    <mvc:view-controller path="/admin/to/login.html" view-name="admin-login"></mvc:view-controller>
+    <mvc:view-controller path="/admin/to/main.html" view-name="main"></mvc:view-controller>
+    <mvc:view-controller path="/admin/to/admin-add.html" view-name="admin-add"></mvc:view-controller>
 
 
+
+
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--&lt;!&ndash;拦截的url&ndash;&gt;-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<mvc:exclude-mapping path="/do/loginOut.html"/>-->
+            <!--&lt;!&ndash;不拦截的url&ndash;&gt;-->
+            <!--<mvc:exclude-mapping path="/admin/to/login.html"/>-->
+            <!--<mvc:exclude-mapping path="/do/login.html"/>-->
+            <!--<bean class="com.laughing.crowd.Interceptor.LoginInterceptor"/>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
 </beans>

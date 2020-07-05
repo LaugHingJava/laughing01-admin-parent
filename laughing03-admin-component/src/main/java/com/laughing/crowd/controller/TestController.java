@@ -1,13 +1,12 @@
 package com.laughing.crowd.controller;
 
 import com.laughing.crowd.testpojo.Student;
-import com.laughing.crowd.util.CrowdReqUtil;
+import com.laughing.crowd.util.CrowdUtil;
 import com.laughing.crowd.util.ResultEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class TestController {
@@ -43,7 +42,7 @@ public class TestController {
     @ResponseBody
     @RequestMapping("/test/req")
     public Object reqTest(HttpServletRequest request){
-        System.out.println(CrowdReqUtil.judgeRequestType(request));
+        System.out.println(CrowdUtil.judgeRequestType(request));
         return "测试req";
     }
 }

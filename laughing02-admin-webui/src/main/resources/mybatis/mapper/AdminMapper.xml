@@ -90,6 +90,7 @@
     from t_admin
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <!--根据id删除-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_admin
     where id = #{id,jdbcType=INTEGER}
@@ -225,4 +226,17 @@
       create_time = #{createTime,jdbcType=CHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <!--//根据登录用户名查找对应用户-->
+  <select id="selectAdminByLoginAcct" parameterType="String" resultMap="BaseResultMap">
+      select * from t_admin where login_acct=#{loginAcct}
+  </select>
+  <!--//    根据用户条件模糊查询-->
+  <select id="selectAdminListByKeyword" parameterType="String" resultMap="BaseResultMap">
+      select id,login_acct,user_name,email,create_time from t_admin
+     where login_acct like CONCAT('%',#{keyword},'%')
+      or
+      user_name like CONCAT('%',#{keyword},'%')
+      or
+      email like CONCAT('%',#{keyword},'%')
+  </select>
 </mapper>

@@ -25,6 +25,18 @@
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <!-- 指定Mapper 配置文件位置-->
         <property name="mapperLocations" value="classpath:mybatis/mapper/*Mapper.xml"/>
+        <!-- 配置MyBatis 的插件-->
+        <property name="plugins">
+            <bean class="com.github.pagehelper.PageHelper">
+                <property name="properties">
+                    <props>
+                        <prop key="dialect">mysql</prop>
+                        <prop key="reasonable">true</prop>
+                    </props>
+                </property>
+            </bean>
+        </property>
+
     </bean>
     <!-- 配置MapperScannerConfigurer -->
     <!-- 把MyBatis 创建的Mapper 接口类型的代理对象扫描到IOC 容器中-->
@@ -37,5 +49,6 @@
     <import resource="spring-persist-tx.xml"/>
     <!--扫描包-->
     <context:component-scan base-package="com.laughing.crowd.*" />
+
 
 </beans>

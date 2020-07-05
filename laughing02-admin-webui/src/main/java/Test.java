@@ -49,4 +49,12 @@ public class Test {
 
     }
 
+    @org.junit.Test
+    public void forSava()   {
+        System.out.println("tt");
+        for(int i = 0; i < 238; i++) {
+            adminMapper.insert(new Admin(null, "loginAcct"+i, "userPswd"+i, "userName"+i, "email"+i, null));
+        }
+    }
+
 }
