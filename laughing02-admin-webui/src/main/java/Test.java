@@ -1,5 +1,6 @@
 
 import com.laughing.crowd.entity.Admin;
+import com.laughing.crowd.entity.Menu;
 import com.laughing.crowd.mapper.AdminMapper;
 import com.laughing.crowd.service.AdminService;
 import org.junit.runner.RunWith;
@@ -13,12 +14,13 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Objects;
 
 
 // 指定Spring 给Junit 提供的运行器类
-@RunWith(SpringJUnit4ClassRunner.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
 // 加载Spring 配置文件的注解
-@ContextConfiguration(locations = {"classpath:spring-persist-mybatis.xml"})
+//@ContextConfiguration(locations = {"classpath:spring-persist-mybatis.xml"})
 public class Test {
 
 
@@ -55,6 +57,17 @@ public class Test {
         for(int i = 0; i < 238; i++) {
             adminMapper.insert(new Admin(null, "loginAcct"+i, "userPswd"+i, "userName"+i, "email"+i, null));
         }
+    }
+
+    @org.junit.Test
+    public void test()   {
+        Menu root = new Menu();
+        Menu menu = new Menu();
+        menu.setName("111");
+        root = menu;
+        menu.setName("sss");
+        System.out.println(root.getName());
+
     }
 
 }

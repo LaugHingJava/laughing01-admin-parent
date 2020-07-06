@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.laughing.crowd.mapper.MenuMapper" >
+  <select id="selectAllMenu" resultType="menu">
+    select * from t_menu
+  </select>
+  <insert id="insertMenu" parameterType="menu">
+    insert into t_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="pid != null">
+        pid,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="url != null" >
+        url,
+      </if>
+      <if test="icon != null" >
+        icon,
+      </if>
+    </trim>
+    <trim prefix="values(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id},
+      </if>
+      <if test="pid != null">
+       #{pid},
+      </if>
+      <if test="name != null">
+        #{name},
+      </if>
+      <if test="url != null" >
+        #{url},
+      </if>
+      <if test="icon != null" >
+        #{icon},
+      </if>
+    </trim>
+  </insert>
+
+  <delete id="deleteMenuById" parameterType="int">
+    delete from t_menu where id = #{id}
+  </delete>
+  <update id="updateMenuById" parameterType="menu">
+    update t_menu
+    <set>
+      <if test="pid != null">
+        pid=#{pid},
+      </if>
+      <if test="name != null">
+        name = #{name},
+      </if>
+      <if test="url != null">
+        url =#{url},
+      </if>
+      <if test="icon != null">
+        icon = #{icon},
+      </if>
+    </set>
+    where id = #{id}
+  </update>
+</mapper>

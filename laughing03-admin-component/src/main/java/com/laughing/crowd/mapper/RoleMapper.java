@@ -1,5 +1,6 @@
 package com.laughing.crowd.mapper;
 
+import com.laughing.crowd.entity.Menu;
 import com.laughing.crowd.entity.Role;
 import org.apache.ibatis.annotations.Param;
 
